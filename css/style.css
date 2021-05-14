@@ -11,7 +11,8 @@ body {
     font-size: 18px;
     color: #E4B7A0;
     line-height: 1.7;
-    background-image: url('../img/LandingPageStarryOfficial.jpeg');
+    background-image: url('../img/actualstarry.jpeg');
+    overflow: hidden ;
 
 }
 #showcase {
@@ -49,6 +50,12 @@ padding: 1rem;
     color: #C38370;
     background-color: #F6EEE0;
 }
+.star {
+    position:absolute;
+    top:0;
+    right: 0;
+    transform: rotate(45deg);
+}
 span {
     width: 170px;
     height: 2px;
@@ -57,16 +64,44 @@ span {
     margin: 50px;
     margin-bottom: 150px;
     position: relative;
+    animation: shooting 3s linear infinite;
+    opacity:0;
 }
 span::before {
     content: "";
     position:absolute;
     bottom: 0;
     left:0; 
-    width: 5px;
-    height: 5px;
+    width: -1px;
+    height: -1px;
     background-color: #fff;
     box-shadow: 0 0 6px #fff;
     border-radius: 50px;
 
+}
+.star:nth-child(2){
+    right: 250px;
+}
+
+.star:nth-child(2) span {
+    animation-delay: 5s;
+}
+
+.star:nth-child(4){
+    right: -250px;
+}
+
+.star:nth-child(4) span {
+    animation-delay: 10s;
+}
+
+@keyframes shooting {
+    0%{
+        transform: translateY(-200px) rotate(-90deg);
+        opacity: .3;
+    }
+    100% {
+        transform: translateY(600px) rotate(-90deg);
+        opacity: 0;
+    }
 }
