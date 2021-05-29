@@ -80,7 +80,7 @@ span::before {
 
 }
 .star:nth-child(2){
-    right: 250px;
+    left: 250px;
 }
 
 .star:nth-child(2) span {
